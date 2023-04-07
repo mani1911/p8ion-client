@@ -1,10 +1,10 @@
-import { MantineThemeOverride } from "@mantine/core";
+import { MantineThemeOverride } from '@mantine/core';
 
 const theme: MantineThemeOverride = {
-  fontFamily: "",
-  headings: {
-    fontFamily: "",
-  },
+	fontFamily: '',
+	headings: {
+		fontFamily: '',
+	},
 };
 
 export default theme;
