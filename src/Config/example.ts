@@ -6,7 +6,7 @@ interface IConfig {
 }
 
 const config: IConfig = {
-	backend_url: 'http://127.0.0.1:3000',
+	backend_url: 'http://127.0.0.1:',
 	env: 'development',
 	oauthClientId: '',
 	oauthRedirectUrl: '',

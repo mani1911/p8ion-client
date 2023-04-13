@@ -2,6 +2,7 @@ import { Button } from '@mantine/core';
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { getOauthUrl } from '../../Utils/Oauth/oauth';
+
 const Login: React.FC = () => {
 	return (
 		<>
@@ -12,7 +13,6 @@ const Login: React.FC = () => {
 				leftIcon={<FcGoogle />}
 				size="md"
 				component="a"
-				target="_blank"
 				rel="noopener noreferrer"
 				href={getOauthUrl()}
 			>
