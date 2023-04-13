@@ -1,9 +1,16 @@
 import { MantineThemeOverride } from '@mantine/core';
 
 const theme: MantineThemeOverride = {
-	fontFamily: '',
+	fontFamily: 'Poppins, sans-serif',
 	headings: {
-		fontFamily: '',
+		fontFamily: 'Poppins, sans-serif',
+	},
+	fontSizes: {
+		xs: '10',
+		sm: '16',
+		md: '20',
+		lg: '26',
+		xl: '32',
 	},
 };
 
