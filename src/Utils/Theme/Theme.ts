@@ -12,6 +12,11 @@ const theme: MantineThemeOverride = {
 		lg: '26',
 		xl: '32',
 	},
+	colors: {
+		grape: ['#140230'],
+		white: ['#ffffff'],
+		black: ['#000000'],
+	},
 };
 
 export default theme;
