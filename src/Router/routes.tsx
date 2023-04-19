@@ -1,4 +1,4 @@
-import { Login, PageNotFound, Home } from '../Pages';
+import { Login, PageNotFound, Home, OAuthLoader } from '../Pages';
 
 interface Routes {
 	title: string;
@@ -25,6 +25,12 @@ const routes: Routes[] = [
 		path: '/home',
 		description: 'Home Page',
 		element: <Home />,
+	},
+	{
+		title: 'OAuthLoader',
+		path: '/oauth',
+		description: 'OAuth Loader',
+		element: <OAuthLoader />,
 	},
 ];
 

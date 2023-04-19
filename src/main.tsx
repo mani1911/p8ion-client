@@ -4,7 +4,9 @@ import { registerSW } from 'virtual:pwa-register';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './Utils';
 import { Notifications } from '@mantine/notifications';
-
+import { Provider } from 'react-redux';
+import { store } from './App/store';
+import { CookiesProvider } from 'react-cookie';
 const updateSW = registerSW({
 	onNeedRefresh() {
 		if (confirm('New content available. Reload?')) {
@@ -15,7 +17,11 @@ const updateSW = registerSW({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<MantineProvider withNormalizeCSS theme={theme}>
-		<Notifications />
-		<App />
+		<CookiesProvider>
+			<Provider store={store}>
+				<Notifications />
+				<App />
+			</Provider>
+		</CookiesProvider>
 	</MantineProvider>
 );
