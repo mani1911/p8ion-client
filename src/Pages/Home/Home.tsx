@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Toast } from '../../Components';
-import { Button, Flex } from '@mantine/core';
+import { Button, Flex,Center } from '@mantine/core';
+import CameraComponent from '../Camera/Camera';
 import { useAppSelector, useAppDispatch } from '../../App/hooks';
 
 import {
@@ -22,19 +23,22 @@ const Home = () => {
 		console.log(data);
 	}
 	useEffect(() => {
+		Toast('green', 'Login', 'Logged In Successfully');
+	});
+	useEffect(() => {
 		testPost();
 	}, []);
 	console.log('Cookie : ', cookie);
 	return (
-		<Flex
-			bg="blue"
-			justify="flex-center"
-			direction="column"
-			align="center"
-			h="100vh"
-		>
-			{value}
-		</Flex>
+		<div className='main'>
+      <Center>
+        
+          <CameraComponent />
+        
+      </Center>
+      
+      
+    </div>
 	);
 };
 
