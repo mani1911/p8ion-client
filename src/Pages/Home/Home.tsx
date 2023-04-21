@@ -3,7 +3,7 @@ import { Toast } from '../../Components';
 import { Button, Flex,Center } from '@mantine/core';
 import CameraComponent from '../Camera/Camera';
 import { useAppSelector, useAppDispatch } from '../../App/hooks';
-
+import Draw from '../../Components/Drawer/Drawer'
 import {
 	useGetImagesQuery,
 	useGetUserQuery,
@@ -31,6 +31,7 @@ const Home = () => {
 	console.log('Cookie : ', cookie);
 	return (
 		<div className='main'>
+			<Draw></Draw>
       <Center>
         
           <CameraComponent />

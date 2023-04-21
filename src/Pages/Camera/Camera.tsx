@@ -33,7 +33,7 @@ const CameraComponent:React.FC<Props> = () => {
 
   return (
     <div>
-    <Center style={{paddingTop:"15%"}}>
+    <Center style={{paddingTop:"10%"}}>
 
       <div>
         {image!='' && <div><img src={`data:image/jpeg;base64,${image}`} /></div>}
@@ -51,7 +51,7 @@ const CameraComponent:React.FC<Props> = () => {
       
       
       </Center>
-      <Center style={{paddingTop:"10%"}}>
+      <Center style={{paddingTop:"5%"}}>
         <Group>
           <Button disabled={!chk} onClick={captureImage}>Capture</Button>
       <Button disabled={!!chk} onClick={saveImage}> Save...</Button>
