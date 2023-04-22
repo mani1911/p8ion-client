@@ -9,7 +9,9 @@ interface NavigationDrawerProps {
 function NavigationDrawer({ opened, onClose }: NavigationDrawerProps) {
   return (
     <Drawer opened={opened} onClose={onClose} overlayProps={{ opacity: 0.5, blur: 4 }} size="30%">
-      <a href="/">Home</a>
+      <a href="/home">Home</a>
+      <br></br>
+      <a href="/dashboard">Dashboard</a>
       <br></br>
       <a href="/about">About</a>
       <br></br>
