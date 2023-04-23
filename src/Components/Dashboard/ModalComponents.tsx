@@ -1,5 +1,5 @@
 import {Input,Text,Image, Group, Button} from '@mantine/core'
-import { Content } from "../objects";
+import { Content } from "./objects";
 import {SiGoogletranslate} from "react-icons/si"
 import Speech from './speech';
 // import Translate from './Translate';

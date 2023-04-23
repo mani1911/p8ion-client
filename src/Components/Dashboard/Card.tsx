@@ -1,7 +1,7 @@
 import { Button,Card, Image, Text, Badge, Group, Spoiler, Modal } from '@mantine/core';
 import ModalComponents from './ModalComponents';
 import { useDisclosure } from '@mantine/hooks';
-import { Content } from "../objects";
+import { Content } from "./objects";
 function Temp({content} : {content : Content}) {
   const [opened, { open, close }] = useDisclosure(false);
   return (

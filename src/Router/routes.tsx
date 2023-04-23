@@ -1,4 +1,4 @@
-import { Login, PageNotFound, Home, OAuthLoader } from '../Pages';
+import {Dashboard, Login, PageNotFound, Home, OAuthLoader} from '../Pages';
 
 interface Routes {
 	title: string;
@@ -32,6 +32,12 @@ const routes: Routes[] = [
 		description: 'OAuth Loader',
 		element: <OAuthLoader />,
 	},
+	{
+		title: 'Dashboard',
+		path: '/dashboard',
+		description: 'Dashboard',
+		element: <Dashboard />,
+	}
 ];
 
 export default routes;
