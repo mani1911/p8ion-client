@@ -35,9 +35,6 @@ function ModalComponents({content} : {content : Content}){
             {content.title}
           </Text>
         </Group>
-      {/* <Text>
-        {content.description}
-      </Text> */}
       {content.description.map((str) => (
         <Drug key={content.title} data={str} />
       ))}

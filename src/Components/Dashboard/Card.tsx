@@ -7,16 +7,7 @@ function Temp({content} : {content : Content}) {
   return (
     <Card shadow="sm" padding="lg" radius="lg" withBorder >
     <div>
-    <Modal opened={opened} size="auto" onClose={close} radius='lg' styles={(theme) => ({
-      // content: {
-      //   backgroundColor: 'grey',
-      // },
-      close: {
-        // backgroundColor: 'green',
-        height: '0,75em',
-        width: '5em,'
-      }
-    })}>
+    <Modal opened={opened} size="auto" onClose={close} radius='lg' >
     <ModalComponents content={content}/>
     </Modal>
       <Card.Section>
