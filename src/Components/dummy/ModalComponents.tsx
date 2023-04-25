@@ -12,16 +12,16 @@ function ModalComponents({content} : {content : Content}){
     <Group position='center' align='auto'>
     < Image 
       src={content.image}
-      height = {350}
-      width={300}
+      height = {1000}
+      width={800}
       radius='md'
       />
     </Group>
       <Group position="center">
-          <Button variant="light" color="blue"  mt="sm" radius="md" size='sm' mb="sm" compact={true}>
+          <Button variant="light" color="blue"  mt="xl" radius="md" size='md' mb="xl">
           Translate<SiGoogletranslate></SiGoogletranslate>
           </Button>
-          <Input component="select" size="sm">
+          <Input component="select">
         <option value="1">English</option>
         <option value="2">Tamil</option>
       </Input>
@@ -30,14 +30,15 @@ function ModalComponents({content} : {content : Content}){
         <Group position='center'>
           <Speech content= {content} />
         </Group>
-        {/* <Group position='center'>
-          <Text size='md' mb='md'>
+        <Group position='center'>
+          <Text size='lg' mb='xl'>
             {content.title}
           </Text>
-        </Group> */}
+        </Group>
       {content.description.map((str) => (
         <Drug key={content.title} data={str} />
       ))}
+      
     </>
     );
 }

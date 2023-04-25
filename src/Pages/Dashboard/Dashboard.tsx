@@ -1,4 +1,5 @@
 import Page from '../../Components/Dashboard/Page';
+import Draw from '../../Components/Drawer/Drawer';
 import HeaderResponsive from '../../Components/Dashboard/Header';
 import { MantineProvider } from '@mantine/core';
 function Dashboard() {
@@ -8,14 +9,16 @@ function Dashboard() {
       theme={{
         fontFamily: 'Poppins, sans-serif',
         fontSizes: {
-          xs: '0.6rem',
-          sm: '1rem',
-          md: '1.8rem',
-          lg: '2.8rem',
-          xl: '3rem',
+          xs: '0.3rem',
+          sm: '0.7rem',
+          md: '1rem',
+          lg: '1.8rem',
+          xl: '2rem',
         },
       }}>
-        <HeaderResponsive/>
+        
+        {/* <HeaderResponsive/> */}
+        <Draw  />
         <Page />
       </MantineProvider>
     </div>
