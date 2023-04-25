@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Drawer, Burger, Group } from '@mantine/core';
-
+import { Drawer, Burger, Group, Text, Button } from '@mantine/core';
+import {AiOutlineInfoCircle,AiOutlineHome} from "react-icons/ai";
+import {RxDashboard,} from "react-icons/rx";
+import {RiContactsLine} from "react-icons/ri";
 interface NavigationDrawerProps {
   opened: boolean;
   onClose: () => void;
@@ -8,14 +10,21 @@ interface NavigationDrawerProps {
 
 function NavigationDrawer({ opened, onClose }: NavigationDrawerProps) {
   return (
-    <Drawer opened={opened} onClose={onClose} overlayProps={{ opacity: 0.5, blur: 4 }} size="30%">
-      <a href="/home">Home</a>
+    <Drawer opened={opened} onClose={onClose} overlayProps={{ opacity: 0.5, blur: 4 }} size="40%" withCloseButton={false} transitionProps={{ transition: 'fade', duration: 250, timingFunction: 'linear' }}>
+      <Drawer.Title><Text size="lg">P8ion</Text></Drawer.Title>
+      <Text size="md">
+      <br/>
+      <a href="/home"><AiOutlineHome/> Home</a>
       <br></br>
-      <a href="/dashboard">Dashboard</a>
+      <br/>
+      <a href="/dashboard"><RxDashboard/> Dashboard</a>
       <br></br>
-      <a href="/about">About</a>
+      <br/>
+      <a href="/about"><AiOutlineInfoCircle/> About</a>
       <br></br>
-      <a href="/contact">Contact</a>
+      <br/>
+      <a href="/contact"><RiContactsLine/> Contact</a>
+      </Text>
     </Drawer>
   );
 }
@@ -36,3 +45,4 @@ function Draw() {
 }
 
 export default Draw;
+``

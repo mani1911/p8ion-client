@@ -1,4 +1,4 @@
-import { Button,Card, Image, Text, Badge, Group, Spoiler, Modal } from '@mantine/core';
+import { Button,Card, Image, Text, Badge, Group, Spoiler, Modal, AspectRatio} from '@mantine/core';
 import ModalComponents from './ModalComponents';
 import { useDisclosure } from '@mantine/hooks';
 import { Content } from "./objects";
@@ -7,9 +7,6 @@ function Temp({content} : {content : Content}) {
   return (
     <Card shadow="sm" padding="lg" radius="lg" withBorder >
     <div>
-    {/* <Modal centered opened={opened} size="auto" onClose={close} radius='lg' transitionProps={{ transition: 'fade', duration: 450, timingFunction: 'linear'}}>
-    <ModalComponents content={content}/>
-    </Modal> */}
     <Modal.Root centered opened={opened} size="auto" onClose={close} radius='lg' transitionProps={{ transition: 'fade', duration: 450, timingFunction: 'linear' }}>
         <Modal.Overlay />
         <Modal.Content>
@@ -45,10 +42,6 @@ function Temp({content} : {content : Content}) {
       </Spoiler>
       </Text>
       <Group position='center'>
-      {/* <Button onClick={open} size='sm'>
-        <Text size='xs'>
-        Show more
-        </Text> */}
         <Button variant="light" color="blue"  mt="0" radius="md" size='sm' mb="0" onClick={open} compact={true}>
           Show more
           </Button>
