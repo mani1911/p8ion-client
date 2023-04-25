@@ -7,14 +7,13 @@ function Speech({content} : {content : Content}){
     
     var temp = "";
     for(var i=0; i<content.description.length;i++){
-      console.log(i)
       temp = temp + content.description[i]
     }
     msg.text = temp;
     window.speechSynthesis.speak(msg)
   }
     return (
-        <Button variant="light" color="blue"  mt="xl" radius="md" size='md' mb="xl" onClick={() => speechHandler(msg)}>
+        <Button variant="light" color="blue"  mt="0" radius="md" size='sm' mb="sm" onClick={() => speechHandler(msg)} compact={true}>
         Speech<AiFillSound></AiFillSound>
         </Button>
     )

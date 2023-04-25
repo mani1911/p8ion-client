@@ -7,42 +7,53 @@ function Temp({content} : {content : Content}) {
   return (
     <Card shadow="sm" padding="lg" radius="lg" withBorder >
     <div>
-    <Modal opened={opened} size="auto" onClose={close} radius='lg' >
+    {/* <Modal centered opened={opened} size="auto" onClose={close} radius='lg' transitionProps={{ transition: 'fade', duration: 450, timingFunction: 'linear'}}>
     <ModalComponents content={content}/>
-    </Modal>
+    </Modal> */}
+    <Modal.Root centered opened={opened} size="auto" onClose={close} radius='lg' transitionProps={{ transition: 'fade', duration: 450, timingFunction: 'linear' }}>
+        <Modal.Overlay />
+        <Modal.Content>
+          <Modal.Header>
+            <Modal.Title><Group position='center'><Text weight={500} size="md">{content.title}</Text></Group></Modal.Title>
+            <Modal.CloseButton />
+          </Modal.Header>
+          <Modal.Body><ModalComponents content={content}/></Modal.Body>
+        </Modal.Content>
+      </Modal.Root>
       <Card.Section>
         <Group position="center">
         <Image
           src={content.image}
-          height={500}
+          height={200}
           alt="Prescription"
         />
         </Group>
         
       </Card.Section>
 
-      <Group position="center" mt="xl" mb="xs">
-        <Text weight={500} size="lg">{content.title}</Text>
-        <Badge color="pink" variant="light" size='lg' pos='inherit'>
+      <Group position="center" mt="md" mb="xs">
+        <Text weight={500} size="md">{content.title}</Text>
+        <Badge color="pink" variant="light" size='xs' pos='inherit'>
           New
         </Badge>
         
       </Group>
 
-      <Text size="md" color="dimmed">
-      <Spoiler maxHeight={120} showLabel="" hideLabel="Hide">
+      <Text size="0.6rem" color="dimmed">
+      <Spoiler maxHeight={60} showLabel="" hideLabel="Hide">
       {content.description}
-      </Spoiler> 
-      <Group position='center' mt='md'>
-      <Button onClick={open}>
-        <Text size='sm'>
-        Show more
-        </Text>
-        
-      </Button>
-      </Group>
-      
+      </Spoiler>
       </Text>
+      <Group position='center'>
+      {/* <Button onClick={open} size='sm'>
+        <Text size='xs'>
+        Show more
+        </Text> */}
+        <Button variant="light" color="blue"  mt="0" radius="md" size='sm' mb="0" onClick={open} compact={true}>
+          Show more
+          </Button>
+      {/* </Button> */}
+      </Group>
       </div>
       </Card>
   );
