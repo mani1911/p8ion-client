@@ -1,9 +1,9 @@
-import React, { useEffect ,useState} from 'react';
-import { Toast } from '../../Components';
-import { Button, Flex,Center } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
+import { Loader, Toast } from '../../Components';
+import { Button, Flex, Center, Container } from '@mantine/core';
 import CameraComponent from '../Camera/Camera';
 import { useAppSelector, useAppDispatch } from '../../App/hooks';
-import Draw from '../../Components/Drawer/Drawer'
+import Draw from '../../Components/Drawer/Drawer';
 import HeaderResponsive from '../../Components/Dashboard/Header';
 import {
 	useGetImagesQuery,
@@ -16,39 +16,26 @@ const Home = () => {
 	const value = useAppSelector((state) => state.User.username);
 	const dispatch = useAppDispatch();
 	const [cookie, setCookie] = useCookies();
-	const [img,setImg]=useState('')
-	const [parseImage] = useParseImageMutation();
+	const [img, setImg] = useState('');
+	const [parseImage, { isLoading }] = useParseImageMutation();
 
-	async function testPost() {
+	async function captureImageHandler(img: string) {
 		const data = await parseImage(img);
 		console.log(data);
 	}
-	useEffect(() => {
-		Toast('green', 'Login', 'Logged In Successfully');
-	});
-	useEffect(() => {
-		testPost();
-	}, []);
-	console.log('Cookie : ', cookie);
-
 
 	return (
-		<div style={{width:300}}>
-			<Draw></Draw>
-			
-      <Center>
-        
-          <CameraComponent onImageCapture={function (imag: string): void {
-					setImg(imag);
-					console.log("what")
-					console.log(imag)
-					console.log(img);
-				} } />
-        
-      </Center>
-      
-      
-    </div>
+		<Container h={'100vh'}>
+			<Draw />
+			<Flex direction={'column'} align={'center'} justify={'center'}>
+				<CameraComponent
+					onImageCapture={async function (imag: string) {
+						await captureImageHandler(imag);
+					}}
+				/>
+				{isLoading ? <Loader /> : null}
+			</Flex>
+		</Container>
 	);
 };
 
