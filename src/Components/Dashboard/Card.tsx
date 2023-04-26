@@ -61,9 +61,6 @@ function Temp({ content }: { content: Content }) {
 					<Text weight={500} size="md">
 						{content.Title}
 					</Text>
-					<Badge color="pink" variant="light" size="xs" pos="inherit">
-						New
-					</Badge>
 				</Group>
 
 				<Text size="0.6rem" color="dimmed">

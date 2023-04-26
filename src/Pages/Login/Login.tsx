@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { getOauthUrl } from '../../Utils/Oauth/oauth';
 
 const Login: React.FC = () => {
+	console.log(location.pathname);
 	return (
 		<>
 			<Flex

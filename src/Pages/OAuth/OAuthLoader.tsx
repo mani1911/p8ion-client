@@ -1,6 +1,6 @@
 import { useCookies } from 'react-cookie';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Toast } from '../../Components';
+import { PageLoader, Toast } from '../../Components';
 import { useEffect } from 'react';
 import classes from './styles.module.css';
 import { useAppDispatch } from '../../App/hooks';
@@ -35,24 +35,14 @@ const OAuthLoader = () => {
 				username,
 				email,
 				isLogged: true,
+				isDrawerOpen: false,
 			};
 			dispatch(login(user));
 			navigate('/home');
 		}
 	}, []);
 
-	return (
-		<div className={classes.wrapper}>
-			<div className={classes['cssload-container']}>
-				<div className={classes['cssload-loading']}>
-					<i></i>
-					<i></i>
-					<i></i>
-					<i></i>
-				</div>
-			</div>
-		</div>
-	);
+	return <PageLoader />;
 };
 
 export default OAuthLoader;

@@ -1,13 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
-import {
-	Center,
-	Button,
-	Flex,
-	UnstyledButton,
-	Avatar,
-} from '@mantine/core';
-import {AiFillCamera} from "react-icons/ai";
+import { Center, Button, Flex, UnstyledButton, Avatar } from '@mantine/core';
+import { AiFillCamera } from 'react-icons/ai';
 type Props = {
 	onImageCapture: (imag: string) => void;
 };
@@ -39,7 +33,7 @@ const CameraComponent = ({ onImageCapture }: Props) => {
 	};
 
 	return (
-		<Flex direction="column">
+		<Flex direction="column" mt={'50px'}>
 			<Center style={{ objectFit: 'contain' }}>
 				<div style={{ blockSize: 'auto' }}>
 					{image != '' && (
@@ -66,10 +60,21 @@ const CameraComponent = ({ onImageCapture }: Props) => {
 				<Button onClick={retakeImage} w="100px" mt={'10px'}>
 					Retake
 				</Button>
-				<UnstyledButton disabled={!chk} onClick={captureImage} w={'60px'}>
-				<Avatar size={60} color="blue" radius={30}><AiFillCamera/></Avatar>
+				<UnstyledButton
+					disabled={!chk}
+					onClick={captureImage}
+					w={'60px'}
+				>
+					<Avatar size={60} color="blue" radius={30}>
+						<AiFillCamera />
+					</Avatar>
 				</UnstyledButton>
-				<Button disabled={!!chk} onClick={saveImage} w="100px" mt={'10px'}>
+				<Button
+					disabled={!!chk}
+					onClick={saveImage}
+					w="100px"
+					mt={'10px'}
+				>
 					{' '}
 					Save
 				</Button>

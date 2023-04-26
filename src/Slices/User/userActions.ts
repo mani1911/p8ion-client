@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import config from '../../Config';
+import config from '../../Config/index';
 import { IImage } from './types';
 
 function getCookie(name: string): string | null {

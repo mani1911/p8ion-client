@@ -1,20 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { PageNotFound } from '../Pages';
+import { Login, PageNotFound } from '../Pages';
 import routes from './routes';
-import Draw from '../Components/Drawer/Drawer';
+import { Navbar, Protected } from '../Components';
 
 const Router = () => {
 	return (
 		<>
 			<BrowserRouter>
+				{location.pathname == '/' ? null : <Navbar />}
 				<Routes>
+					<Route key="/" path="/" element={<Login />} />
 					{routes.map((route) => {
 						return (
 							<Route
 								key={route.path}
 								path={route.path}
-								element={route.element}
+								element={<Protected>{route.element}</Protected>}
 							/>
 						);
 					})}
