@@ -2,22 +2,12 @@ import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import {
 	Center,
-	Card,
-	Grid,
-	Divider,
-	createStyles,
 	Button,
-	Progress,
-	SimpleGrid,
-	Skeleton,
-	Container,
-	Stack,
-	useMantineTheme,
-	px,
 	Flex,
-	rem,
-	Group,
+	UnstyledButton,
+	Avatar,
 } from '@mantine/core';
+import {AiFillCamera} from "react-icons/ai";
 type Props = {
 	onImageCapture: (imag: string) => void;
 };
@@ -73,15 +63,15 @@ const CameraComponent = ({ onImageCapture }: Props) => {
 				</div>
 			</Center>
 			<Flex justify="center" gap="lg" mt="lg">
-				<Button disabled={!chk} onClick={captureImage} w={'110px'}>
-					Capture
+				<Button onClick={retakeImage} w="100px" mt={'10px'}>
+					Retake
 				</Button>
-				<Button disabled={!!chk} onClick={saveImage} w="100px">
+				<UnstyledButton disabled={!chk} onClick={captureImage} w={'60px'}>
+				<Avatar size={60} color="blue" radius={30}><AiFillCamera/></Avatar>
+				</UnstyledButton>
+				<Button disabled={!!chk} onClick={saveImage} w="100px" mt={'10px'}>
 					{' '}
 					Save
-				</Button>
-				<Button onClick={retakeImage} w="100px">
-					Retake
 				</Button>
 			</Flex>
 		</Flex>
