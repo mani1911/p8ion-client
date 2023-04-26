@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import classes from './styles.module.css';
 import { useAppDispatch } from '../../App/hooks';
 import { login } from '../../Slices/User/userSlice';
+import { createStyles } from '@mantine/core';
 
 const OAuthLoader = () => {
 	const location = useLocation();

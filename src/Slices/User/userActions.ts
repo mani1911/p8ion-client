@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import config from '../../Config';
+import { IImage } from './types';
 
 function getCookie(name: string): string | null {
 	const nameLenPlus = name.length + 1;
@@ -29,10 +30,10 @@ export const apiSlice = createApi({
 
 	endpoints(builder) {
 		return {
-			getImages: builder.query<string, number | void>({
-				query(userID) {
+			getImages: builder.query<IImage[] | null, number | void>({
+				query() {
 					return {
-						url: `/user/images/${userID}`,
+						url: `/user/images`,
 						method: 'GET',
 					};
 				},
@@ -52,7 +53,7 @@ export const apiSlice = createApi({
 					return {
 						url: '/user/image',
 						method: 'POST',
-						body: JSON.stringify({ image64: image64 }),
+						body: { image64 },
 					};
 				},
 			}),
