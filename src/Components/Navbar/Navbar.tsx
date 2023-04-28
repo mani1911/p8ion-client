@@ -42,8 +42,8 @@ const Navbar = () => {
 			icon: <AiOutlineInfoCircle />,
 		},
 		{
-			name: 'Contact',
-			route: '/contact',
+			name: 'Chat',
+			route: '/chat',
 			icon: <RiContactsLine />,
 		},
 		{

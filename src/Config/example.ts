@@ -3,6 +3,8 @@ interface IConfig {
 	env: 'development' | 'production';
 	oauthClientId: string;
 	oauthRedirectUrl: string;
+	openAIApiKey: string;
+	openAiURL: string;
 }
 
 const config: IConfig = {
@@ -10,6 +12,8 @@ const config: IConfig = {
 	env: 'development',
 	oauthClientId: '',
 	oauthRedirectUrl: '',
+	openAIApiKey: '',
+	openAiURL: '',
 };
 
 export default config;
