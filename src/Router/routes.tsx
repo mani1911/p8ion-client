@@ -6,6 +6,7 @@ import {
 	OAuthLoader,
 	Logout,
 	Chat,
+	MapR
 } from '../Pages';
 
 interface Routes {
@@ -51,6 +52,12 @@ const routes: Routes[] = [
 		path: '/chat',
 		description: 'Chat bot',
 		element: <Chat />,
+	},
+	{
+		title: 'Map',
+		path: '/map',
+		description: 'Map',
+		element: <MapR />,
 	},
 ];
 

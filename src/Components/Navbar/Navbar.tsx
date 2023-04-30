@@ -9,7 +9,7 @@ import {
 	Avatar,
 } from '@mantine/core';
 import { AiOutlineInfoCircle, AiOutlineHome } from 'react-icons/ai';
-import { BiLogOut } from 'react-icons/bi';
+import { BiLogOut ,BiMap} from 'react-icons/bi';
 import { RxDashboard } from 'react-icons/rx';
 import { RiContactsLine, RiLinksFill } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
@@ -37,14 +37,19 @@ const Navbar = () => {
 			icon: <RxDashboard />,
 		},
 		{
-			name: 'About',
-			route: '/about',
-			icon: <AiOutlineInfoCircle />,
+			name: 'Map',
+			route: '/map',
+			icon: <BiMap />,
 		},
 		{
 			name: 'Chat',
 			route: '/chat',
 			icon: <RiContactsLine />,
+		},
+		{
+			name: 'About',
+			route: '/about',
+			icon: <AiOutlineInfoCircle />,
 		},
 		{
 			name: 'Logout',

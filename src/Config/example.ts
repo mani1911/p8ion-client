@@ -5,6 +5,7 @@ interface IConfig {
 	oauthRedirectUrl: string;
 	openAIApiKey: string;
 	openAiURL: string;
+	mapAPIKey:string;
 }
 
 const config: IConfig = {
@@ -14,6 +15,7 @@ const config: IConfig = {
 	oauthRedirectUrl: '',
 	openAIApiKey: '',
 	openAiURL: '',
+	mapAPIKey:''
 };
 
 export default config;
